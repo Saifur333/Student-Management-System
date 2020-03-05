@@ -16,13 +16,13 @@ import javax.swing.JTextField;
 
 public class AddCourses extends JFrame{
     
-     Container c;
-     JLabel cName,cCode,cDescription;
-     JTextField tname,tcode,desArea;
-     // JTextArea desArea;
-      JButton back,Add,home;
-      Font F;
-      JScrollPane desAreascroll;
+     Container container;
+     JLabel courseName_label,courseCode_label,courseDescription_label;
+     JTextField name_textfield,code_textfield,description_textfield;
+     // JTextArea description_textfield;
+      JButton back_button,Add_button,home_button;
+      Font font;
+      JScrollPane description_textfieldscroll;
       JFrame frame;
     
     
@@ -33,64 +33,64 @@ public class AddCourses extends JFrame{
     public void initComponents(){
         
         
-        c=this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new Color(0, 230, 230));
+        container=this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new Color(0, 230, 230));
         
-        F = new Font("Arial",Font.BOLD,30);
+        font = new Font("Arial",Font.BOLD,30);
         
-        cName = new JLabel("Course Name          :");
-        cName.setBounds(220, 50, 300,60);
-        cName.setFont(F);
-        c.add(cName);
+        courseName_label = new JLabel("Course Name          :");
+        courseName_label.setBounds(220, 50, 300,60);
+        courseName_label.setFont(font);
+        container.add(courseName_label);
         
-        tname = new JTextField();
-        tname.setBounds(520, 50, 400,60);
-        tname.setFont(F);
-        c.add(tname);
+        name_textfield = new JTextField();
+        name_textfield.setBounds(520, 50, 400,60);
+        name_textfield.setFont(font);
+        container.add(name_textfield);
         
-        cCode = new JLabel("Course Code           :");
-        cCode.setBounds(220, 130, 300,60);
-        cCode.setFont(F);
-        c.add(cCode);
-        
-       
-        tcode = new JTextField();
-        tcode.setBounds(520, 130, 400,60);
-        tcode.setFont(F);
-        c.add(tcode);
-        
-        
-        cDescription = new JLabel("Course Description:");
-        cDescription.setBounds(220, 200, 320,60);
-        cDescription.setFont(F);
-        c.add(cDescription);
-        
-        desArea = new JTextField();
-        desArea.setBounds(520, 200, 400, 60);
-        desArea.setFont(F);
-        c.add(desArea);
-         
+        courseCode_label = new JLabel("Course Code           :");
+        courseCode_label.setBounds(220, 130, 300,60);
+        courseCode_label.setFont(font);
+        container.add(courseCode_label);
         
        
+        code_textfield = new JTextField();
+        code_textfield.setBounds(520, 130, 400,60);
+        code_textfield.setFont(font);
+        container.add(code_textfield);
+        
+        
+        courseDescription_label = new JLabel("Course Description:");
+        courseDescription_label.setBounds(220, 200, 320,60);
+        courseDescription_label.setFont(font);
+        container.add(courseDescription_label);
+        
+        description_textfield = new JTextField();
+        description_textfield.setBounds(520, 200, 400, 60);
+        description_textfield.setFont(font);
+        container.add(description_textfield);
+         
+        
+       
          
          
-        Add = new JButton("Add");
-        Add.setBounds(780,500,130,50);
-        Add.setBackground(Color.BLACK);
-        Add.setForeground(Color.WHITE);
-        Add.setFont(F);
-        c.add(Add);
+        Add_button= new JButton("Add");
+        Add_button.setBounds(780,500,130,50);
+        Add_button.setBackground(Color.BLACK);
+        Add_button.setForeground(Color.WHITE);
+        Add_button.setFont(font);
+        container.add(Add_button);
         
         
         
         
-        home = new JButton("Home");
-        home.setBounds(780, 560, 130, 50);
-        home.setBackground(Color.BLACK);
-        home.setForeground(Color.WHITE);
-        home.setFont(F);
-        c.add(home);
+        home_button= new JButton("Home");
+        home_button.setBounds(780, 560, 130, 50);
+        home_button.setBackground(Color.BLACK);
+        home_button.setForeground(Color.WHITE);
+        home_button.setFont(font);
+        container.add(home_button);
         
         
          frame = new JFrame();
@@ -100,12 +100,4 @@ public class AddCourses extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("Add Course");
         frame.setVisible(true);
-        frame.add(c);
-        
-        
-        
-    }
-    
-    
-    
-}
+        frame.add(container);
