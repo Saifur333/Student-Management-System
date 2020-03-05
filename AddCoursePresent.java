@@ -140,7 +140,7 @@ public class AddCoursePresent extends JFrame {
         frame.setVisible(true);
         frame.add(container);
         
-        add.addActionListener(new ActionListener(){
+        add_button.addActionListener(new ActionListener(){
         
   
         public void actionPerformed(ActionEvent e){
@@ -228,7 +228,7 @@ public class AddCoursePresent extends JFrame {
             }
         
         });
-        home.addActionListener(new ActionListener(){
+        home_button.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
                if(ae.getSource()==home)
