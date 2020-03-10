@@ -10,24 +10,24 @@ public class DipanitaCourseMenu extends CourseMenu{
      int option;
     DipanitaCourseMenu(){
         
-        newitem.addActionListener(new ActionListener(){
+        new_menuitem.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e){
              File file;
              filename1=null;
             //JOptionPane.showMessageDialog(null, "why");
             if(filename1==null){
-                int option = jc.showSaveDialog(DipanitaCourseMenu.this);
+                int option = filechooser.showSaveDialog(DipanitaCourseMenu.this);
             if(option==JFileChooser.APPROVE_OPTION){
-                file=jc.getSelectedFile();
+                file=filechooser.getSelectedFile();
                 filename1 = file.getPath();
                 frame.dispose();
                 AddPresent addPresent= new AddPresent();
                 addPresent.filename=filename1;
-               addPresent.back.addActionListener(new ActionListener(){
+               addPresent.back_button.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
-               if(ae.getSource()==addPresent.back)
+               if(ae.getSource()==addPresent.back_button)
                {
                  addPresent.frame.dispose();
                  DipanitaCourseMenu dmf = new DipanitaCourseMenu();
@@ -46,10 +46,10 @@ public class DipanitaCourseMenu extends CourseMenu{
         }
         
         });
-              back.addActionListener(new ActionListener(){
+              back_button.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
-               if(ae.getSource()==back)
+               if(ae.getSource()==back_button)
                {
                   frame.dispose();
                   DipanitaModule dtm = new DipanitaModule();

@@ -26,14 +26,14 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class MenuFile extends JFrame{
-       Container c;
-       JMenuBar mb;
+       Container container;
+       JMenuBar menubar;
         JMenu  menu;
-       JMenuItem newitem,openitem;
-       JButton home,back;
+       JMenuItem new_menuitem,open_menuitem;
+       JButton home_button,back_button;
      JFrame frame;
      String filename1;
-     JFileChooser jc;
+     JFileChooser filechooser;
      JTable table;
     DefaultTableModel model;
     JScrollPane scroll;
@@ -42,27 +42,27 @@ public class MenuFile extends JFrame{
      
        
     MenuFile(){
-        c = this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new java.awt.Color(0, 230, 230));
+        container = this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(0, 230, 230));
          
-        mb=new JMenuBar();
-        mb.setBounds(0, 0,1600,50);
-        mb.getMaximumSize();
+        menubar=new JMenuBar();
+        menubar.setBounds(0, 0,1600,50);
+        menubar.getMaximumSize();
         
         
         menu=new JMenu("File"); 
         menu.setPreferredSize(new Dimension(105,50));
             
-        newitem = new JMenuItem("New"); 
-        newitem.setPreferredSize(new Dimension(100,50));
-        openitem=new JMenuItem("Open"); 
-        openitem.setPreferredSize(new Dimension(100,50));
+        new_menuitem = new JMenuItem("New"); 
+        new_menuitem.setPreferredSize(new Dimension(100,50));
+        open_menuitem=new JMenuItem("Open"); 
+        open_menuitem.setPreferredSize(new Dimension(100,50));
             
             
-        menu.add(newitem); menu.add(openitem);  
-        mb.add(menu);
-        c.add(mb);
+        menu.add(new_menuitem); menu.add(open_menuitem);  
+        menubar.add(menu);
+        container.add(menubar);
         
         
          Font hf=new Font("Arial",Font.BOLD,16);
@@ -72,20 +72,20 @@ public class MenuFile extends JFrame{
         
         
         
-        jc = new JFileChooser();
+        filechooser = new JFileChooser();
         
-         home=new JButton("Home");
-        home.setBounds(500,600,150,50);
-        home.setFont(hf);
-        home.setBackground(Color.BLACK);
-        home.setForeground(Color.WHITE);
-        c.add(home);
-        back=new JButton("Back");
-        back.setBounds(700,600,150,50);
-        back.setFont(hf);
-        back.setBackground(Color.BLACK);
-        back.setForeground(Color.WHITE);
-        c.add(back);
+         home_button=new JButton("Home");
+        home_button.setBounds(500,600,150,50);
+        home_button.setFont(hf);
+        home_button.setBackground(Color.BLACK);
+        home_button.setForeground(Color.WHITE);
+        container.add(home_button);
+        back_button=new JButton("Back");
+        back_button.setBounds(700,600,150,50);
+        back_button.setFont(hf);
+        back_button.setBackground(Color.BLACK);
+        back_button.setForeground(Color.WHITE);
+        container.add(back_button);
         
         
         frame=new JFrame();
@@ -95,11 +95,11 @@ public class MenuFile extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("Menu");
         frame.setVisible(true);
-        frame.add(c);
+        frame.add(container);
         
         
         
-        openitem.addActionListener(new ActionListener(){
+        open_menuitem.addActionListener(new ActionListener(){
         
   
         @Override
@@ -114,12 +114,12 @@ public class MenuFile extends JFrame{
         
                 scroll = new JScrollPane(table);
                 scroll.setBounds(10,60,1300,500);
-                c.add(scroll);
+                container.add(scroll);
   
-                int option = jc.showOpenDialog(MenuFile.this);
+                int option = filechooser.showOpenDialog(MenuFile.this);
                 if (option == JFileChooser.APPROVE_OPTION){
                     
-                    File sf = jc.getSelectedFile();
+                    File sf = filechooser.getSelectedFile();
                     filename1 =sf.getPath();
                     sf  = new File(filename1);
                     try{
@@ -144,7 +144,7 @@ public class MenuFile extends JFrame{
         
         });
         
-       home.addActionListener(new ActionListener(){
+       home_button.addActionListener(new ActionListener(){
         
   
         @Override

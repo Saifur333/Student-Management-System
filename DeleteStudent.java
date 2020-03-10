@@ -17,25 +17,25 @@ import javax.swing.JOptionPane;
 
 public class DeleteStudent extends StudentInformation{
      
-     JButton delete,back;     
+     JButton delete_button,back_button;     
    public  DeleteStudent() throws FileNotFoundException{
         
         
-        delete=new JButton("Delete");
-        delete.setBounds(1100,540,150,50);
+        delete_button=new JButton("Delete");
+        delete_button.setBounds(1100,540,150,50);
         //home.setFont(f);
-        delete.setBackground(Color.BLACK);
-        delete.setForeground(Color.WHITE);
-        c.add(delete);
+        delete_button.setBackground(Color.BLACK);
+        delete_button.setForeground(Color.WHITE);
+        container.add(delete_button);
         
-        back=new JButton("Back");
-        back.setBounds(700,600,150,50);
+        back_button=new JButton("Back");
+        back_button.setBounds(700,600,150,50);
         //home.setFont(f);
-        back.setBackground(Color.BLACK);
-        back.setForeground(Color.WHITE);
-        c.add(back);
+        back_button.setBackground(Color.BLACK);
+        back_button.setForeground(Color.WHITE);
+        container.add(back_button);
         
-        delete.addActionListener(new ActionListener(){
+        delete_button.addActionListener(new ActionListener(){
         
   
         @Override
@@ -80,7 +80,7 @@ public class DeleteStudent extends StudentInformation{
       
         
         });
-        back.addActionListener(new ActionListener(){
+        back_button.addActionListener(new ActionListener(){
         
   
         @Override

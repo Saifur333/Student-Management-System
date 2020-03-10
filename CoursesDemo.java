@@ -1,5 +1,6 @@
 
-package project;
+package  projectsms;
+
 
 import java.awt.Color;
 import java.awt.Container;
@@ -13,105 +14,105 @@ import javax.swing.border.Border;
 
 
 public class CoursesDemo extends JFrame{
-     private Container c;
+     private Container container;
      private JLabel titlelabel,label1,label2,label3,label4,label5;
      private JButton btn1,btn2,btn3,btn4,btn5,backbtn,homebtn;
-     private Font f,hf;
+     private Font font,highestfont;
      private Cursor cursor;
     
      CoursesDemo()
      {
-         c=this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new java.awt.Color(0, 230, 230));
+         container=this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(0, 230, 230));
         
-        hf=new Font("Arial",Font.BOLD,28);
+        highestfont=new Font("Arial",Font.BOLD,28);
         
         cursor =new Cursor(Cursor.HAND_CURSOR);
         
         
         titlelabel=new JLabel("Courses");
-        titlelabel.setFont(hf);
+        titlelabel.setFont(highestfont);
         titlelabel.setBounds(350,60,250,70);
-        c.add(titlelabel);
+        container.add(titlelabel);
         
-        f=new Font("Arial",Font.BOLD,24);
+        font=new Font("Arial",Font.BOLD,24);
         
         label1=new JLabel("1.");
-        label1.setFont(f);
+        label1.setFont(font);
         label1.setBounds(180,140,20,50);
-        c.add(label1);
+        container.add(label1);
         
         btn1=new JButton();
         btn1.setBounds(200,140,350,50);
-        btn1.setFont(f);
+        btn1.setFont(font);
         btn1.setCursor(cursor);
         btn1.setBackground(new java.awt.Color(0,230,230));
-        c.add(btn1);
+        container.add(btn1);
         
         label2=new JLabel("2.");
-        label2.setFont(f);
+        label2.setFont(font);
         label2.setBounds(180,200,20,50);
-        c.add(label2);
+        container.add(label2);
         
         btn2=new JButton();
         btn2.setBounds(200,200,350,50);
-        btn2.setFont(f);
+        btn2.setFont(font);
         btn2.setCursor(cursor);
         btn2.setBackground(new java.awt.Color(0,230,230));
-        c.add(btn2);
+        container.add(btn2);
         
         label3=new JLabel("3.");
-        label3.setFont(f);
+        label3.setFont(font);
         label3.setBounds(180,260,20,50);
-        c.add(label3);
+        container.add(label3);
         
         btn3=new JButton();
         btn3.setBounds(200,260,350,50);
-        btn3.setFont(f);
+        btn3.setFont(font);
         btn3.setCursor(cursor);
         btn3.setBackground(new java.awt.Color(0,230,230));
-        c.add(btn3);
+        container.add(btn3);
         
         label4=new JLabel("4.");
-        label4.setFont(f);
+        label4.setFont(font);
         label4.setBounds(180,320,20,50);
-        c.add(label4);
+        container.add(label4);
         
         btn4=new JButton();
         btn4.setBounds(200,320,350,50);
-        btn4.setFont(f);
+        btn4.setFont(font);
         btn4.setCursor(cursor);
         btn4.setBackground(new java.awt.Color(0,230,230));
-        c.add(btn4);
+        container.add(btn4);
         
         label5=new JLabel("5.");
-        label5.setFont(f);
+        label5.setFont(font);
         label5.setBounds(180,380,20,50);
-        c.add(label5);
+        container.add(label5);
         
         btn5=new JButton();
         btn5.setBounds(200,380,350,50);
-        btn5.setFont(f);
+        btn5.setFont(font);
         btn5.setCursor(cursor);
         btn5.setBackground(new java.awt.Color(0,230,230));
-        c.add(btn5);
+        container.add(btn5);
         
         backbtn=new JButton("Back");
         backbtn.setBounds(100,500,150,50);
-        backbtn.setFont(f);
+        backbtn.setFont(font);
         backbtn.setBackground(Color.BLACK);
         backbtn.setForeground(Color.WHITE);
         backbtn.setCursor(cursor);
-        c.add(backbtn);
+        container.add(backbtn);
         
         homebtn=new JButton("Home");
         homebtn.setBounds(500,500,150,50);
-        homebtn.setFont(f);
+        homebtn.setFont(font);
         homebtn.setBackground(Color.BLACK);
         homebtn.setForeground(Color.WHITE);
         homebtn.setCursor(cursor);
-        c.add(homebtn);
+        container.add(homebtn);
         
         Border emptyBorder = BorderFactory.createEmptyBorder();
         btn1.setBorder(emptyBorder);
@@ -127,7 +128,7 @@ public class CoursesDemo extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("Courses");
         frame.setVisible(true);
-        frame.add(c);
+        frame.add(container);
         
      }
     public static void main(String[] args) {

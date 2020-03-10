@@ -16,108 +16,108 @@ import javax.swing.JTextField;
 
 public class AddMember extends JFrame{
     
-     Container c;
+     Container container;
      JLabel namelbl,rolllbl,sessionlbl,hometownlbl,emaillbl,contactlbl,bloodlbl;
-     JTextField name,roll,session,hometown,eemail,contact,blood;
-      JButton back,home;
-     final Font f;
+     JTextField name_textfield,roll_textfield,session_textfield,hometown_textfield,email_textfield,contact_textfield,blood_textfield;
+      JButton back_button,home_button;
+     final Font font;
      JFrame frame;
     
   
     AddMember(){
-        c=this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new java.awt.Color(0, 230, 230));
+        container=this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(0, 230, 230));
         
-        f=new Font("Arial",Font.BOLD,24);
+        font=new Font("Arial",Font.BOLD,24);
         
         
         namelbl=new JLabel("Name                 :");      
-        namelbl.setFont(f);
+        namelbl.setFont(font);
         namelbl.setBounds(180,100,200,50);
-        c.add(namelbl);
+        container.add(namelbl);
         
-        name=new JTextField();      
-        name.setFont(f);
-        name.setBounds(400,100,300,40);
-        c.add(name);
+        name_textfield=new JTextField();      
+        name_textfield.setFont(font);
+        name_textfield.setBounds(400,100,300,40);
+        container.add(name_textfield);
         
         
         rolllbl=new JLabel("Roll No              :");      
-        rolllbl.setFont(f);
+        rolllbl.setFont(font);
         rolllbl.setBounds(180,160,200,50);
-        c.add(rolllbl);
+        container.add(rolllbl);
        
-        roll=new JTextField();      
-        roll.setFont(f);
-        roll.setBounds(400,160,300,40);
-        c.add(roll);
+        roll_textfield=new JTextField();      
+        roll_textfield.setFont(font);
+        roll_textfield.setBounds(400,160,300,40);
+        container.add(roll_textfield);
         
         sessionlbl=new JLabel("Session             :");      
-        sessionlbl.setFont(f);
+        sessionlbl.setFont(font);
         sessionlbl.setBounds(180,220,200,50);
-        c.add(sessionlbl);
+       container.add(sessionlbl);
         
-        session=new JTextField();      
-        session.setFont(f);
-        session.setBounds(400,220,300,40);
-        c.add(session);
+        session_textfield=new JTextField();      
+        session_textfield.setFont(font);
+        session_textfield.setBounds(400,220,300,40);
+        container.add(session_textfield);
         
         hometownlbl=new JLabel("Home town        :");      
-        hometownlbl.setFont(f); 
+        hometownlbl.setFont(font); 
         hometownlbl.setBounds(180,280,200,50);
-        c.add(hometownlbl);
+        container.add(hometownlbl);
         
-        hometown=new JTextField();      
-        hometown.setFont(f);
-        hometown.setBounds(400,280,300,40);
-        c.add(hometown);
+        hometown_textfield=new JTextField();      
+        hometown_textfield.setFont(font);
+        hometown_textfield.setBounds(400,280,300,40);
+        container.add(hometown_textfield);
         
         emaillbl=new JLabel("Email                 :");      
-        emaillbl.setFont(f); 
+        emaillbl.setFont(font); 
         emaillbl.setBounds(180,340,200,50);
-        c.add(emaillbl);
+        container.add(emaillbl);
         
-        eemail=new JTextField();      
-        eemail.setFont(f);
-        eemail.setBounds(400,340,300,40);
-        c.add(eemail);
+        email_textfield=new JTextField();      
+        email_textfield.setFont(font);
+        email_textfield.setBounds(400,340,300,40);
+        container.add(email_textfield);
         
         contactlbl=new JLabel("Contact              :");      
-        contactlbl.setFont(f);
+        contactlbl.setFont(font);
         contactlbl.setBounds(180,400,200,50);
-        c.add(contactlbl);
+        container.add(contactlbl);
         
-        contact=new JTextField();      
-        contact.setFont(f);
-        contact.setBounds(400,400,300,40);
-        c.add(contact);
+        contact_textfield=new JTextField();      
+        contact_textfield.setFont(font);
+        contact_textfield.setBounds(400,400,300,40);
+        container.add(contact_textfield);
         
         bloodlbl=new JLabel("Blood Group      :");      
-        bloodlbl.setFont(f);
+        bloodlbl.setFont(font);
         bloodlbl.setBounds(180,460,200,50);
-        c.add(bloodlbl);
+        container.add(bloodlbl);
         
-        blood=new JTextField();      
-        blood.setFont(f);
-        blood.setBounds(400,460,300,40);
-        c.add(blood);
+        blood_textfield=new JTextField();      
+        blood_textfield.setFont(font);
+        blood_textfield.setBounds(400,460,300,40);
+        container.add(blood_textfield);
         
         
         
-        back=new JButton("Back");
-        back.setBounds(180,570,150,50);
-        back.setFont(f);
-        back.setBackground(Color.BLACK);
-        back.setForeground(Color.WHITE);
-        c.add(back);
+        back_button=new JButton("Back");
+        back_button.setBounds(180,570,150,50);
+        back_button.setFont(font);
+        back_button.setBackground(Color.BLACK);
+        back_button.setForeground(Color.WHITE);
+        container.add(back_button);
         
-        home=new JButton("Home");
-        home.setBounds(520,570,150,50);
-        home.setFont(f);
-        home.setBackground(Color.BLACK);
-        home.setForeground(Color.WHITE);
-        c.add(home);
+        home_button=new JButton("Home");
+        home_button.setBounds(520,570,150,50);
+        home_button.setFont(font);
+        home_button.setBackground(Color.BLACK);
+        home_button.setForeground(Color.WHITE);
+        container.add(home_button);
         
         
          frame=new JFrame();
@@ -127,7 +127,7 @@ public class AddMember extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("Add member");
         frame.setVisible(true);
-        frame.add(c);
+        frame.add(container);
        
        
          
@@ -135,8 +135,8 @@ public class AddMember extends JFrame{
         
        }
     
-    //public static void main(String[] args) {
+    public static void main(String[] args) {
         
-        //AddMember home=new AddMember();
-    //}
+        AddMember home=new AddMember();
+    }
 }

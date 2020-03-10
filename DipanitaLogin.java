@@ -5,7 +5,7 @@ package projectsms;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-
+import javax.swing.JFrame;
 
 public class DipanitaLogin extends Login{
     
@@ -22,7 +22,7 @@ public class DipanitaLogin extends Login{
  
                 if(name.equals("Dipanita") && pass.equals("1234")){
                         JOptionPane.showMessageDialog(null,"Welcome");
-                    frame.dispose();
+                    dispose();
                     DipanitaModule director = new DipanitaModule();
                 }
                 else{

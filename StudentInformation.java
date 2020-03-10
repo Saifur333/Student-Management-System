@@ -21,21 +21,21 @@ import javax.swing.table.DefaultTableModel;
 
 public class StudentInformation extends JFrame{
     
-    Container c;
+    Container container;
     JTable table;
     DefaultTableModel model;
     JScrollPane scroll;
     String[] coloum = {"Name","Roll No","Session","Home town","Email","Contact","Blood group"};
       JFrame frame;      
     //String[] rows = new String[6];
-    JButton home;
+    JButton home_button;
     
     public StudentInformation() throws FileNotFoundException {
     
          
-        c=this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new java.awt.Color(0, 230, 230));
+        container=this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(0, 230, 230));
         
        
         
@@ -54,15 +54,15 @@ public class StudentInformation extends JFrame{
         
         scroll = new JScrollPane(table);
         scroll.setBounds(10,30,1300,500);
-        c.add(scroll);
+        container.add(scroll);
         
         
-        home=new JButton("Home");
-        home.setBounds(1100,600,150,50);
-        //home.setFont(f);
-        home.setBackground(Color.BLACK);
-        home.setForeground(Color.WHITE);
-        c.add(home);
+        home_button=new JButton("Home");
+        home_button.setBounds(1100,600,150,50);
+        //home_button.setFont(f);
+        home_button.setBackground(Color.BLACK);
+        home_button.setForeground(Color.WHITE);
+        container.add(home_button);
         
         
         
@@ -75,7 +75,7 @@ public class StudentInformation extends JFrame{
         frame.setTitle("Student Information");
         frame.setVisible(true);
 
-        frame.add(c);
+        frame.add(container);
         
         //String arr[]= {"dsfs","dhgfh","fgdh","hggfh","fgh","fghf"};
         //model.addRow(arr);
@@ -103,7 +103,7 @@ public class StudentInformation extends JFrame{
       }
         
         
-        home.addActionListener(new ActionListener(){
+        home_button.addActionListener(new ActionListener(){
         
   
         @Override

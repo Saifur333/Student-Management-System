@@ -22,7 +22,7 @@ public class Teacher5Login extends Login{
  
                 if(name.equals("Dipok Chandra Das") && pass.equals("1234")){
                         JOptionPane.showMessageDialog(null,"Welcome");
-                    frame.dispose();
+                    dispose();
                     Teacher5Module t = new Teacher5Module();
                 }
                 else{

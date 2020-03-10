@@ -21,7 +21,7 @@ public class SumonLogin extends Login{
  
                 if(name.equals("Md. Auhidur Rahman") && pass.equals("1234")){
                     JOptionPane.showMessageDialog(null,"Welcome");
-                    frame.dispose();
+                    dispose();
                     SumonModule director = new SumonModule();
                 }
                 else{

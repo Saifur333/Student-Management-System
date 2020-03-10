@@ -24,10 +24,10 @@ public class Updatefaculty extends AddMemberFaculty{
         
         update=new JButton("Update");
         update.setBounds(520,510,150,50);
-        update.setFont(f);
+        update.setFont(font);
         update.setBackground(Color.BLACK);
         update.setForeground(Color.WHITE);
-        c.add(update);
+        container.add(update);
         
         update.addActionListener(new ActionListener(){
         
@@ -38,12 +38,12 @@ public class Updatefaculty extends AddMemberFaculty{
          if(e.getSource()==update)
             {
                 
-            String tname =name.getText();
+            String tname =name_textfield.getText();
             
-            String  thometown = hometown.getText();
-            String  temail = email.getText();
-            String tcontact = contact.getText();
-            String tblood = blood.getText();
+            String  thometown = hometown_textfield.getText();
+            String  temail = email_textfield.getText();
+            String tcontact = contact_textfield.getText();
+            String tblood = blood_textfield.getText();
             
             if(tname.equals(""))
                     {

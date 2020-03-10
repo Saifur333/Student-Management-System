@@ -10,24 +10,24 @@ public class Teacher4CourseMenu extends CourseMenu{
      int option;
     Teacher4CourseMenu(){
         
-        newitem.addActionListener(new ActionListener(){
+        new_menuitem.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e){
              File file;
              filename1=null;
             //JOptionPane.showMessageDialog(null, "why");
             if(filename1==null){
-                int option = jc.showSaveDialog(Teacher4CourseMenu.this);
+                int option = filechooser.showSaveDialog(Teacher4CourseMenu.this);
             if(option==JFileChooser.APPROVE_OPTION){
-                file=jc.getSelectedFile();
+                file=filechooser.getSelectedFile();
                 filename1 = file.getPath();
                 frame.dispose();
                 AddPresent addPresent= new AddPresent();
                 addPresent.filename=filename1;
-               addPresent.back.addActionListener(new ActionListener(){
+               addPresent.back_button.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
-               if(ae.getSource()==addPresent.back)
+               if(ae.getSource()==addPresent.back_button)
                {
                  addPresent.frame.dispose();
                  Teacher4CourseMenu dmf = new Teacher4CourseMenu();
@@ -46,10 +46,10 @@ public class Teacher4CourseMenu extends CourseMenu{
         }
         
         });
-              back.addActionListener(new ActionListener(){
+              back_button.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
-               if(ae.getSource()==back)
+               if(ae.getSource()==back_button)
                {
                   frame.dispose();
                   Teacher4Module dtm = new Teacher4Module();

@@ -101,3 +101,34 @@ public class AddCourses extends JFrame{
         frame.setTitle("Add Course");
         frame.setVisible(true);
         frame.add(container);
+        
+        home_button.addActionListener(new ActionListener(){
+        
+  
+        @Override
+        public void actionPerformed(ActionEvent e){
+            
+  
+                frame.dispose();
+                Home admin =new Home();
+        }
+        
+        });
+        back_button.addActionListener(new ActionListener(){
+        
+  
+        @Override
+        public void actionPerformed(ActionEvent e){
+            
+  
+                frame.dispose();
+                
+        }
+        
+        });
+        
+    }
+   
+    
+    
+}

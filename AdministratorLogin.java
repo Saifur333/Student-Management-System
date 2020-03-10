@@ -16,48 +16,48 @@ import javax.swing.JTextField;
 public class AdministratorLogin extends JFrame{
     
     
-           private Container c;
-           private Font F ;
-           private JLabel username,password;
-           private JTextField usernameField;
+           private Container container;
+           private Font font ;
+           private JLabel username_label,password_label;
+           private JTextField username_textfield;
            private JPasswordField passField;
-           private JButton submit;
+           private JButton submit_button;
     
     AdministratorLogin(){
         
         
         
-        c=this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new java.awt.Color(0, 230, 230));
+        container=this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(0, 230, 230));
         
-        F = new Font("Arial",Font.BOLD,30);
+        font = new Font("Arial",Font.BOLD,30);
         
-        username = new JLabel("Username   :");
-        username.setBounds(270, 200, 250,60);
-        username.setFont(F);
-        c.add(username);
+        username_label = new JLabel("Username   :");
+        username_label.setBounds(270, 200, 250,60);
+        username_label.setFont(font);
+        container.add(username_label);
         
-        usernameField = new JTextField();
-        usernameField.setBounds(520, 200, 400,60);
-        usernameField.setFont(F);
-        c.add(usernameField);
+        username_textfield = new JTextField();
+        username_textfield.setBounds(520, 200, 400,60);
+        username_textfield.setFont(font);
+        container.add(username_textfield);
         
-        password = new JLabel("Password   :");
-        password.setBounds(270, 330, 250,60);
-        password.setFont(F);
-        c.add(password);
+        password_label = new JLabel("Password   :");
+        password_label.setBounds(270, 330, 250,60);
+        password_label.setFont(font);
+        container.add(password_label);
         
        
         passField = new JPasswordField();
         passField.setBounds(520, 330, 400,60);
-        passField.setFont(F);
-        c.add(passField);
+        passField.setFont(font);
+        container.add(passField);
         
-        submit = new JButton("Submit");
-        submit.setBounds(750, 415, 165, 50);
-        submit.setFont(F);
-        c.add(submit);
+        submit_button = new JButton("Submit");
+        submit_button.setBounds(750, 415, 165, 50);
+        submit_button.setFont(font);
+        container.add(submit_button);
         
         
         
@@ -68,16 +68,16 @@ public class AdministratorLogin extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("Administrator");
         frame.setVisible(true);
-        frame.add(c);
+        frame.add(container);
         
         
-        submit.addActionListener(new ActionListener(){
+        submit_button.addActionListener(new ActionListener(){
         
   
         @Override
         public void actionPerformed(ActionEvent e){
  
-            String name=usernameField.getText();
+            String name=username_textfield.getText();
             String pass= passField.getText();
  
                 if(name.equals("Admin") && pass.equals("1234")){
@@ -87,7 +87,7 @@ public class AdministratorLogin extends JFrame{
                 }
                 else{
                     JOptionPane.showMessageDialog(null,"Wrong Password");
-                    usernameField.setText("");
+                    username_textfield.setText("");
                     passField.setText("");
                 }
         }

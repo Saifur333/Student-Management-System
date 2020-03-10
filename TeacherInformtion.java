@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class TeacherInformtion extends JFrame{
     
-    Container c;
+    Container container;
     JTable table;
     DefaultTableModel model;
     JScrollPane scroll;
@@ -33,9 +33,9 @@ public class TeacherInformtion extends JFrame{
     public TeacherInformtion() throws FileNotFoundException {
     
          
-        c=this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new java.awt.Color(0, 230, 230));
+        container=this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(0, 230, 230));
         
        
         
@@ -54,7 +54,7 @@ public class TeacherInformtion extends JFrame{
         
         scroll = new JScrollPane(table);
         scroll.setBounds(10,30,1300,500);
-        c.add(scroll);
+        container.add(scroll);
         
         
         home=new JButton("Home");
@@ -62,7 +62,7 @@ public class TeacherInformtion extends JFrame{
         //home.setFont(f);
         home.setBackground(Color.BLACK);
         home.setForeground(Color.WHITE);
-        c.add(home);
+        container.add(home);
         
         
         
@@ -74,7 +74,7 @@ public class TeacherInformtion extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("Teacher Information");
         frame.setVisible(true);
-        frame.add(c);
+        frame.add(container);
         
         //String arr[]= {"dsfs","dhgfh","fgdh","hggfh","fgh","fghf"};
         //model.addRow(arr);

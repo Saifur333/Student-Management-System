@@ -1,5 +1,5 @@
 
-package project;
+package projectsms;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -17,112 +17,112 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 public class AddRoutine extends JFrame{
     
-    public Container c;
+    public Container container;
     public JLabel daylbl,firstlbl,secondlbl,thirdlbl,fourthlbl,fifthlbl,sixthlbl;
     public JTextField daytf,firsttf,secondtf,thirdtf,fourthtf,fifthtf,sixthtf;
     public JButton add,clear,home;
-    public Font f;
+    public Font font;
     
     AddRoutine()
     {
-        c=this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new java.awt.Color(0, 230, 230));
+        container=this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(0, 230, 230));
         
-        f=new Font("Arial",Font.BOLD,24);
+        font=new Font("Arial",Font.BOLD,24);
         
         
         daylbl=new JLabel("Day name      :");      
-        daylbl.setFont(f);
+        daylbl.setFont(font);
         daylbl.setBounds(140,100,220,50);
-        c.add(daylbl);
+        container.add(daylbl);
         
         daytf=new JTextField();      
-        daytf.setFont(f);
+        daytf.setFont(font);
         daytf.setBounds(400,100,300,40);
-        c.add(daytf);
+        container.add(daytf);
         
         
         firstlbl=new JLabel("09.00am-10.00am:");      
-        firstlbl.setFont(f);
+        firstlbl.setFont(font);
        firstlbl.setBounds(140,160,220,50);
-        c.add(firstlbl);
+        container.add(firstlbl);
         
        firsttf=new JTextField();      
-        firsttf.setFont(f);
+        firsttf.setFont(font);
         firsttf.setBounds(400,160,300,40);
-        c.add(firsttf);
+        container.add(firsttf);
         
         secondlbl=new JLabel("10.00am-11.00am:");      
-        secondlbl.setFont(f);
+        secondlbl.setFont(font);
         secondlbl.setBounds(140,220,220,50);
-        c.add(secondlbl);
+        container.add(secondlbl);
         
         secondtf=new JTextField();      
-        secondtf.setFont(f);
+        secondtf.setFont(font);
         secondtf.setBounds(400,220,300,40);
-        c.add(secondtf);
+        container.add(secondtf);
         
         thirdlbl=new JLabel("11.00am-12.00pm:");      
-        thirdlbl.setFont(f); 
+        thirdlbl.setFont(font); 
         thirdlbl.setBounds(140,280,220,50);
-        c.add(thirdlbl);
+        container.add(thirdlbl);
         
         thirdtf=new JTextField();      
-        thirdtf.setFont(f);
+        thirdtf.setFont(font);
         thirdtf.setBounds(400,280,300,40);
-        c.add(thirdtf);
+        container.add(thirdtf);
         
         fourthlbl=new JLabel("12.00pm-01.00pm:");      
-        fourthlbl.setFont(f); 
+        fourthlbl.setFont(font); 
         fourthlbl.setBounds(140,340,220,50);
-        c.add(fourthlbl);
+        container.add(fourthlbl);
         
         fourthtf=new JTextField();      
-        fourthtf.setFont(f);
+        fourthtf.setFont(font);
         fourthtf.setBounds(400,340,300,40);
-        c.add(fourthtf);
+        container.add(fourthtf);
         
         fifthlbl=new JLabel("02.00pm-03.00pm:");      
-        fifthlbl.setFont(f);
+        fifthlbl.setFont(font);
         fifthlbl.setBounds(140,400,220,50);
-        c.add(fifthlbl);
+        container.add(fifthlbl);
         
         fifthtf=new JTextField();      
-        fifthtf.setFont(f);
+        fifthtf.setFont(font);
         fifthtf.setBounds(400,400,300,40);
-        c.add(fifthtf);
+        container.add(fifthtf);
         
         sixthlbl=new JLabel("03.00pm-04.00pm:");      
-        sixthlbl.setFont(f);
+        sixthlbl.setFont(font);
         sixthlbl.setBounds(140,460,220,50);
-        c.add(sixthlbl);
+        container.add(sixthlbl);
         
         sixthtf=new JTextField();      
-        sixthtf.setFont(f);
+        sixthtf.setFont(font);
         sixthtf.setBounds(400,460,300,40);
-        c.add(sixthtf);
+        container.add(sixthtf);
         
         add=new JButton("Add");
         add.setBounds(520,510,150,50);
-        add.setFont(f);
+        add.setFont(font);
         add.setBackground(Color.BLACK);
         add.setForeground(Color.WHITE);
-        c.add(add);
+        container.add(add);
         
         clear=new JButton("Clear");
         clear.setBounds(180,570,150,50);
-        clear.setFont(f);
+        clear.setFont(font);
         clear.setBackground(Color.BLACK);
         clear.setForeground(Color.WHITE);
-        c.add(clear);
+        container.add(clear);
         
         home=new JButton("Home");
         home.setBounds(520,570,150,50);
-        home.setFont(f);
+        home.setFont(font);
         home.setBackground(Color.BLACK);
         home.setForeground(Color.WHITE);
-        c.add(home);
+        container.add(home);
         
         clear.addActionListener(new ActionListener(){
             @Override
@@ -144,7 +144,7 @@ public class AddRoutine extends JFrame{
             if(e.getSource()==home)
             {
                 dispose();
-                HomeDemo home=new HomeDemo();  
+                Home home=new Home();  
             }
             }
         
@@ -176,7 +176,7 @@ public class AddRoutine extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("Add Routine data");
         frame.setVisible(true);
-        frame.add(c);
+        frame.add(container);
         
     }
         

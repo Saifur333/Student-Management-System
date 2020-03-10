@@ -256,7 +256,7 @@ public class Home extends JFrame{
   
                 frame.dispose();
             try {
-                RoutineDemo routineDemo = new RoutineDemo();
+                Routine_Demo routineDemo = new Routine_Demo();
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -277,5 +277,7 @@ public class Home extends JFrame{
         
         });
     }
- 
+    public static void main(String[] args) {
+        Home home=new Home();
+    }
 }

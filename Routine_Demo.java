@@ -1,5 +1,5 @@
 
-package project;
+package projectsms;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -21,34 +21,34 @@ import javax.swing.table.DefaultTableModel;
 
 public class Routine_Demo extends JFrame{
     
-    public Container c;
+    public Container container;
     public JTable table;
     public JLabel label;
-    public JTextField tf;
+    public JTextField textfield;
     public JScrollPane scroll;
-     Font f;   
-    public JButton back,home;
+     Font font;   
+    public JButton back_button,home_button;
      String cols[]={"Days","09.00am-10.00am","10.00am-11.00am","11.00am-12.00pm","01.00pm-02.00pm","02.00pm-03.00pm","3.00pm-4.00pm"};
      String rows[][] = new String[7][7] ;
      DefaultTableModel model;
      JFrame frame;
     Routine_Demo()throws FileNotFoundException
     {
-        c=this.getContentPane();
-        c.setBackground(new java.awt.Color(0, 230, 230));
-        c.setLayout(null);
+        container=this.getContentPane();
+        container.setBackground(new java.awt.Color(0, 230, 230));
+        container.setLayout(null);
         
-        f=new Font("Arial",Font.BOLD,18);
+        font=new Font("Arial",Font.BOLD,18);
         
         label= new JLabel("Semester :");
         label.setBounds(10,10,150,50);
-        label.setFont(f);
-        c.add(label);
+        label.setFont(font);
+        container.add(label);
         
-        tf =new JTextField();
-        tf.setFont(f);
-        tf.setBounds(150,10,150,50);
-        c.add(tf);
+        textfield =new JTextField();
+        textfield.setFont(font);
+        textfield.setBounds(150,10,150,50);
+        container.add(textfield);
       /*  
         rows[0][0]="Sunday";
         rows[0][1]="";
@@ -100,7 +100,7 @@ public class Routine_Demo extends JFrame{
         rows[6][5]="";
         rows[6][6]="";
         */
-        Font hf=new Font("Arial",Font.BOLD,16);
+        Font highestfont=new Font("Arial",Font.BOLD,16);
         
         table =new JTable(rows,cols);
         table.setSelectionBackground(Color.GREEN);
@@ -109,12 +109,12 @@ public class Routine_Demo extends JFrame{
         model=new DefaultTableModel();
         model.setColumnIdentifiers(cols);
         table.setModel(model);
-        table.setFont(hf);
+        table.setFont(highestfont);
         table.setBackground(Color.WHITE);
     
         scroll=new JScrollPane(table);
         scroll.setBounds(5,90,1350,450);
-        c.add(scroll);
+        container.add(scroll);
         
         String filepath = "";
         
@@ -141,21 +141,21 @@ public class Routine_Demo extends JFrame{
         
         
         
-        home=new JButton("Home");
-        home.setBounds(520,570,150,50);
-        home.setFont(f);
-        home.setBackground(Color.BLACK);
-        home.setForeground(Color.WHITE);
-        c.add(home);
+        home_button=new JButton("Home");
+        home_button.setBounds(520,570,150,50);
+        home_button.setFont(font);
+        home_button.setBackground(Color.BLACK);
+        home_button.setForeground(Color.WHITE);
+        container.add(home_button);
         
-        home.addActionListener(new ActionListener(){
+        home_button.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e){
             
-            if(e.getSource()==home)
+            if(e.getSource()==home_button)
             {
                 dispose();
-                HomeDemo home=new HomeDemo();  
+                Home home=new Home();  
             }
             }
         
@@ -166,7 +166,7 @@ public class Routine_Demo extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("Routine");
         frame.setVisible(true);
-        frame.add(c);
+        frame.add(container);
     }
     
     

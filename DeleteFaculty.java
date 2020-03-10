@@ -26,14 +26,14 @@ public class DeleteFaculty extends TeacherInformtion{
         //home.setFont(f);
         delete.setBackground(Color.BLACK);
         delete.setForeground(Color.WHITE);
-        c.add(delete);
+        container.add(delete);
         
         back=new JButton("Back");
         back.setBounds(700,600,150,50);
         //home.setFont(f);
         back.setBackground(Color.BLACK);
         back.setForeground(Color.WHITE);
-        c.add(back);
+        container.add(back);
         
         delete.addActionListener(new ActionListener(){
         

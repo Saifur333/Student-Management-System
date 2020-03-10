@@ -21,7 +21,7 @@ public class DirectorLogin extends Login{
  
                 if(name.equals("Director") && pass.equals("1234")){
                     JOptionPane.showMessageDialog(null,"Welcome");
-                    frame.dispose();
+                    dispose();
                     DirecTorModule director = new DirecTorModule();
                 }
                 else{

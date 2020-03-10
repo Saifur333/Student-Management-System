@@ -1,5 +1,5 @@
 
-package project;
+package projectsms;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -22,8 +22,8 @@ import javax.swing.JTextField;
 public class Login extends JFrame{
     
     
-            Container c;
-            Font F ;
+            Container container;
+            Font font ;
             JLabel username,password;
             JTextField usernameField;
             JPasswordField passField;
@@ -37,53 +37,53 @@ public class Login extends JFrame{
         
         
         
-        c=this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new java.awt.Color(0, 230, 230));
+        container=this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(0, 230, 230));
         
-        F = new Font("Arial",Font.BOLD,30);
+        font = new Font("Arial",Font.BOLD,30);
         
         username = new JLabel("Username   :");
         username.setBounds(270, 200, 250,60);
-        username.setFont(F);
-        c.add(username);
+        username.setFont(font);
+        container.add(username);
         
         usernameField = new JTextField();
         usernameField.setBounds(520, 200, 400,60);
-        usernameField.setFont(F);
-        c.add(usernameField);
+        usernameField.setFont(font);
+        container.add(usernameField);
         
         password = new JLabel("Password   :");
         password.setBounds(270, 330, 250,60);
-        password.setFont(F);
-        c.add(password);
+        password.setFont(font);
+        container.add(password);
         
        
         passField = new JPasswordField();
         passField.setBounds(520, 330, 400,60);
-        passField.setFont(F);
-        c.add(passField);
+        passField.setFont(font);
+        container.add(passField);
         
         submit = new JButton("Submit");
         submit.setBounds(750, 440, 165, 50);
         submit.setBackground(Color.BLACK);
         submit.setForeground(Color.WHITE);
-        submit.setFont(F);
-        c.add(submit);
+        submit.setFont(font);
+        container.add(submit);
         
         back=new JButton("Back");
         back.setBounds(750, 520, 165, 50);
-        back.setFont(F);
+        back.setFont(font);
         back.setBackground(Color.BLACK);
         back.setForeground(Color.WHITE);
-        c.add(back);
+        container.add(back);
         
         reset=new JButton("Reset");
         reset.setBounds(450, 440, 165, 50);
-        reset.setFont(F);
+        reset.setFont(font);
         reset.setBackground(Color.BLACK);
         reset.setForeground(Color.WHITE);
-        c.add(reset);
+        container.add(reset);
         
         
         
@@ -197,7 +197,7 @@ public class Login extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
         frame.setTitle("Faculty");
-        frame.add(c);
+        frame.add(container);
         
     }
     public static void main(String[] args) {

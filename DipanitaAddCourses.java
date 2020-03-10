@@ -13,28 +13,28 @@ public class DipanitaAddCourses extends AddCourses{
     
     DipanitaAddCourses(){
         
-        back = new JButton("Back");
-        back.setBounds(290, 560, 130, 50);
-        back.setBackground(Color.BLACK);
-        back.setForeground(Color.WHITE);
-        back.setFont(F);
-        c.add(back);
+        back_button = new JButton("Back");
+        back_button.setBounds(290, 560, 130, 50);
+        back_button.setBackground(Color.BLACK);
+        back_button.setForeground(Color.WHITE);
+        back_button.setFont(font);
+        container.add(back_button);
         
          
          
-         Add.addActionListener(new ActionListener(){
+         Add_button.addActionListener(new ActionListener(){
         
   
         @Override
         public void actionPerformed(ActionEvent e){
             
   
-               if(e.getSource()==Add)
+               if(e.getSource()==Add_button)
             {
                 
-                String name =tname.getText();
-                String code =tcode.getText();
-                String  description = desArea.getText();
+                String name =name_textfield.getText();
+                String code =code_textfield.getText();
+                String  description = description_textfield.getText();
                 
                 if(name.equals(""))
                     {
@@ -52,9 +52,9 @@ public class DipanitaAddCourses extends AddCourses{
                     
                      filewriter(name,code,description);
                    JOptionPane.showMessageDialog(null,"added Successfully");
-                     tname.setText("");
-                tcode.setText("");
-                desArea.setText("");
+                     name_textfield.setText("");
+                code_textfield.setText("");
+                description_textfield.setText("");
                     
                 }
                 
@@ -83,7 +83,7 @@ public class DipanitaAddCourses extends AddCourses{
         
         });
          
-         home.addActionListener(new ActionListener(){
+         home_button.addActionListener(new ActionListener(){
         
   
         @Override
@@ -95,7 +95,7 @@ public class DipanitaAddCourses extends AddCourses{
         }
         
         });
-        back.addActionListener(new ActionListener(){
+        back_button.addActionListener(new ActionListener(){
         
   
         @Override

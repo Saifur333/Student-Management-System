@@ -19,10 +19,10 @@ public class AddStudentMember extends AddMember{
         
         add=new JButton("Add");
         add.setBounds(520,510,150,50);
-        add.setFont(f);
+        add.setFont(font);
         add.setBackground(Color.BLACK);
         add.setForeground(Color.WHITE);
-        c.add(add);
+        container.add(add);
         
         add.addActionListener(new ActionListener(){
         @Override
@@ -31,13 +31,13 @@ public class AddStudentMember extends AddMember{
             if(e.getSource()==add)
             {
                 
-            String sname =name.getText();
-            String sroll =roll.getText();
-            String  ssession = session.getText();
-            String  shometown = hometown.getText();
-            String  semail = eemail.getText();
-            String scontact = contact.getText();
-            String sblood = blood.getText();
+            String sname =name_textfield.getText();
+            String sroll =roll_textfield.getText();
+            String  ssession = session_textfield.getText();
+            String  shometown = hometown_textfield.getText();
+            String  semail = email_textfield.getText();
+            String scontact = contact_textfield.getText();
+            String sblood = blood_textfield.getText();
             
             if(sname.equals(""))
                     {
@@ -66,13 +66,13 @@ public class AddStudentMember extends AddMember{
                     
                    filewriter(sname,sroll,ssession,shometown,semail,scontact,sblood);
                    JOptionPane.showMessageDialog(null,"Added Succesfully");
-                   name.setText("");
-                   roll.setText("");
-                   session.setText("");
-                   hometown.setText("");
-                   eemail.setText("");
-                   contact.setText("");
-                   blood.setText("");
+                   name_textfield.setText("");
+                   roll_textfield.setText("");
+                   session_textfield.setText("");
+                   hometown_textfield.setText("");
+                   email_textfield.setText("");
+                   contact_textfield.setText("");
+                   blood_textfield.setText("");
                     
                 }
                 
@@ -103,7 +103,7 @@ public class AddStudentMember extends AddMember{
         
         });
       
-        home.addActionListener(new ActionListener(){
+        home_button.addActionListener(new ActionListener(){
         
   
         @Override
@@ -116,14 +116,14 @@ public class AddStudentMember extends AddMember{
         
         });
         
-        back.addActionListener(new ActionListener(){
+        back_button.addActionListener(new ActionListener(){
         
   
         @Override
         public void actionPerformed(ActionEvent e){
             
   
-               if(e.getSource()==back){
+               if(e.getSource()==back_button){
                  
                     frame.dispose();
                     AdminstratorDemo admin = new AdminstratorDemo();

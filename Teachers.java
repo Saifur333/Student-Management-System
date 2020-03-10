@@ -1,5 +1,5 @@
 
-package project;
+package projectsms;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -103,7 +103,7 @@ public class Teachers extends JFrame{
             if(e.getSource()==back)
             {
                  frame.dispose();
-                HomeDemo home=new HomeDemo();  
+                Home home=new Home();  
             }
                         
         }

@@ -21,7 +21,7 @@ import javax.swing.JFrame;
 
 
 public class UpdateStudentInformation extends StudentInformation{
-    public JButton update,back,edit;
+    public JButton update_button,back_button,edit_button;
   
     
     public UpdateStudentInformation() throws FileNotFoundException
@@ -29,12 +29,12 @@ public class UpdateStudentInformation extends StudentInformation{
        
       
         
-        back=new JButton("Back");
-        back.setBounds(700,600,150,50);
+        back_button=new JButton("Back");
+        back_button.setBounds(700,600,150,50);
         //home.setFont(f);
-        back.setBackground(Color.BLACK);
-        back.setForeground(Color.WHITE);
-        c.add(back);
+        back_button.setBackground(Color.BLACK);
+        back_button.setForeground(Color.WHITE);
+        container.add(back_button);
         
         
         table.addMouseListener(new MouseAdapter(){
@@ -56,19 +56,19 @@ public class UpdateStudentInformation extends StudentInformation{
                 
                 frame.dispose();
                 UpdateStudent adm = new UpdateStudent();
-                adm.name.setText(name);
-                adm.roll.setText(roll_no);
-                adm.session.setText(s_session);
-                adm.hometown.setText(home);
-                adm.eemail.setText(email_name);
-                adm.contact.setText(contact_no);
-                adm.blood.setText(blood_grp);
+                adm.name_textfield.setText(name);
+                adm.roll_textfield.setText(roll_no);
+                adm.session_textfield.setText(s_session);
+                adm.hometown_textfield.setText(home);
+                adm.email_textfield.setText(email_name);
+                adm.contact_textfield.setText(contact_no);
+                adm.blood_textfield.setText(blood_grp);
                 adm.row=numRow;
                 
                 
             }
         });
-        back.addActionListener(new ActionListener(){
+        back_button.addActionListener(new ActionListener(){
         
   
         @Override

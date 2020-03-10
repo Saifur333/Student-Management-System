@@ -7,13 +7,14 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import projectsms.semester1;
 
 
 public class sign extends JFrame implements ActionListener{
     
-    private Container c;
-    private Font f;
-    private JLabel l1;
+    private Container container;
+    private Font font;
+    private JLabel courseplan_label;
     private JButton b1,b2,b3,b4,b5,b6,b7,b8;
     
     sign()
@@ -23,17 +24,17 @@ public class sign extends JFrame implements ActionListener{
     
     public void components()
     {
-          c= this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new Color(25,45,45));
+          container= this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new Color(25,45,45));
         
-        f = new Font("Candara",Font.BOLD,18);
+        font = new Font("Candara",Font.BOLD,18);
         
-        l1 = new JLabel("Course Plan");
-        l1.setBounds(250,20,200,50);
-        l1.setForeground(Color.WHITE);
-        l1.setFont(f);
-        c.add(l1);
+        courseplan_label = new JLabel("Course Plan");
+        courseplan_label.setBounds(250,20,200,50);
+        courseplan_label.setForeground(Color.WHITE);
+        courseplan_label.setFont(font);
+        container.add(courseplan_label);
         
         
         b1 = new JButton("1st Semester");
@@ -41,8 +42,8 @@ public class sign extends JFrame implements ActionListener{
         b1.setBackground(new Color(25,45,45));
         b1.setForeground(Color.WHITE);
         b1.setBorderPainted(false);
-        b1.setFont(f);
-        c.add(b1);
+        b1.setFont(font);
+        container.add(b1);
         b1.addActionListener(this);
         
         
@@ -51,8 +52,8 @@ public class sign extends JFrame implements ActionListener{
         b2.setBackground(new Color(25,45,45));
         b2.setForeground(Color.WHITE);
         b2.setBorderPainted(false);
-        b2.setFont(f);
-        c.add(b2);
+        b2.setFont(font);
+        container.add(b2);
         b2.addActionListener(this);
         
         b3 = new JButton("3rd Semester");
@@ -60,8 +61,8 @@ public class sign extends JFrame implements ActionListener{
         b3.setBackground(new Color(25,45,45));
         b3.setForeground(Color.WHITE);
         b3.setBorderPainted(false);
-        b3.setFont(f);
-        c.add(b3);
+        b3.setFont(font);
+        container.add(b3);
         b3.addActionListener(this);
         
         b4 = new JButton("4th Semester");
@@ -69,8 +70,8 @@ public class sign extends JFrame implements ActionListener{
         b4.setBackground(new Color(25,45,45));
         b4.setForeground(Color.WHITE);
         b4.setBorderPainted(false);
-        b4.setFont(f);
-        c.add(b4);
+        b4.setFont(font);
+        container.add(b4);
         b4.addActionListener(this);
         
         b5 = new JButton("5th Semester");
@@ -78,8 +79,8 @@ public class sign extends JFrame implements ActionListener{
         b5.setBackground(new Color(25,45,45));
         b5.setForeground(Color.WHITE);
         b5.setBorderPainted(false);
-        b5.setFont(f);
-        c.add(b5);
+        b5.setFont(font);
+        container.add(b5);
         b5.addActionListener(this);
         
         b6 = new JButton("6th Semester");
@@ -87,8 +88,8 @@ public class sign extends JFrame implements ActionListener{
         b6.setBackground(new Color(25,45,45));
         b6.setForeground(Color.WHITE);
         b6.setBorderPainted(false);
-        b6.setFont(f);
-        c.add(b6);
+        b6.setFont(font);
+       container.add(b6);
         b6.addActionListener(this);
         
         
@@ -97,8 +98,8 @@ public class sign extends JFrame implements ActionListener{
         b7.setBackground(new Color(25,45,45));
         b7.setForeground(Color.WHITE);
         b7.setBorderPainted(false);
-        b7.setFont(f);
-        c.add(b7);
+        b7.setFont(font);
+        container.add(b7);
         b7.addActionListener(this);
         
         b8 = new JButton("8th Semester");
@@ -106,8 +107,8 @@ public class sign extends JFrame implements ActionListener{
         b8.setBackground(new Color(25,45,45));
         b8.setForeground(Color.WHITE);
         b8.setBorderPainted(false);
-        b8.setFont(f);
-        c.add(b8);
+        b8.setFont(font);
+        container.add(b8);
         b8.addActionListener(this);
         
     }

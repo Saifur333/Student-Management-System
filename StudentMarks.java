@@ -15,100 +15,100 @@ import javax.swing.JTextField;
 public class StudentMarks extends JFrame{
     
     
-     Container c;
-     JLabel namelbl,rolllbl,ct1lbl,ct2lbl,assignlbl,attendencelbl;
-     JTextField name,roll,ct1,ct2,assign,attendence;
-      JButton back,home;
-     final Font f;
+     Container container;
+     JLabel name_label,roll_label,ct1_label,ct2_label,assignment_label,attendence_label;
+     JTextField name_textfield,roll_textfield,ct1_textfield,ct2_textfield,assignment_textfield,attendence_textfield;
+      JButton back_button,home_button;
+     final Font font;
      JFrame frame;
     
   
     StudentMarks(){
-        c=this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new java.awt.Color(0, 230, 230));
+        container=this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(0, 230, 230));
         
-        f=new Font("Arial",Font.BOLD,24);
-        
-        
-        namelbl=new JLabel("Name                 ");      
-        namelbl.setFont(f);
-        namelbl.setBounds(140,100,200,50);
-        c.add(namelbl);
-        
-        name=new JTextField();      
-        name.setFont(f);
-        name.setBounds(500,100,300,40);
-        c.add(name);
+        font=new Font("Arial",Font.BOLD,24);
         
         
-        rolllbl=new JLabel("Roll No              ");      
-        rolllbl.setFont(f);
-        rolllbl.setBounds(140,160,200,50);
-        c.add(rolllbl);
+        name_label=new JLabel("Name                 ");      
+        name_label.setFont(font);
+        name_label.setBounds(140,100,200,50);
+        container.add(name_label);
+        
+        name_textfield=new JTextField();      
+        name_textfield.setFont(font);
+        name_textfield.setBounds(500,100,300,40);
+        container.add(name_textfield);
+        
+        
+        roll_label=new JLabel("Roll No              ");      
+        roll_label.setFont(font);
+        roll_label.setBounds(140,160,200,50);
+        container.add(roll_label);
        
-        roll=new JTextField();      
-        roll.setFont(f);
-        roll.setBounds(500,160,300,40);
-        c.add(roll);
+        roll_textfield=new JTextField();      
+        roll_textfield.setFont(font);
+        roll_textfield.setBounds(500,160,300,40);
+        container.add(roll_textfield);
         
-        ct1lbl=new JLabel("Class Test 1  ");      
-        ct1lbl.setFont(f);
-        ct1lbl.setBounds(140,220,200,50);
-        c.add(ct1lbl);
+        ct1_label=new JLabel("Class Test 1  ");      
+        ct1_label.setFont(font);
+        ct1_label.setBounds(140,220,200,50);
+        container.add(ct1_label);
         
-        ct1=new JTextField();      
-        ct1.setFont(f);
-        ct1.setBounds(500,220,300,40);
-        c.add(ct1);
+        ct1_textfield=new JTextField();      
+        ct1_textfield.setFont(font);
+        ct1_textfield.setBounds(500,220,300,40);
+        container.add(ct1_textfield);
         
-        ct2lbl=new JLabel("Class Test 2    ");      
-        ct2lbl.setFont(f); 
-        ct2lbl.setBounds(140,280,200,50);
-        c.add(ct2lbl);
+        ct2_label=new JLabel("Class Test 2    ");      
+        ct2_label.setFont(font); 
+        ct2_label.setBounds(140,280,200,50);
+        container.add(ct2_label);
         
-        ct2=new JTextField();      
-        ct2.setFont(f);
-        ct2.setBounds(500,280,300,40);
-        c.add(ct2);
+        ct2_textfield=new JTextField();      
+        ct2_textfield.setFont(font);
+        ct2_textfield.setBounds(500,280,300,40);
+        container.add(ct2_textfield);
         
-        assignlbl=new JLabel("Assignment Mark");      
-        assignlbl.setFont(f); 
-        assignlbl.setBounds(140,340,350,50);
-        c.add(assignlbl);
+        assignment_label=new JLabel("Assignment Mark");      
+        assignment_label.setFont(font); 
+        assignment_label.setBounds(140,340,350,50);
+        container.add(assignment_label);
         
-        assign=new JTextField();      
-        assign.setFont(f);
-        assign.setBounds(500,340,300,40);
-        c.add(assign);
+        assignment_textfield=new JTextField();      
+        assignment_textfield.setFont(font);
+        assignment_textfield.setBounds(500,340,300,40);
+        container.add(assignment_textfield);
         
-        attendencelbl=new JLabel("Attendence  Mark");      
-        attendencelbl.setFont(f);
-        attendencelbl.setBounds(140,400,350,50);
-        c.add(attendencelbl);
+        attendence_label=new JLabel("Attendence  Mark");      
+        attendence_label.setFont(font);
+        attendence_label.setBounds(140,400,350,50);
+        container.add(attendence_label);
         
-        attendence=new JTextField();      
-        attendence.setFont(f);
-        attendence.setBounds(500,400,300,40);
-        c.add(attendence);
+        attendence_textfield=new JTextField();      
+        attendence_textfield.setFont(font);
+        attendence_textfield.setBounds(500,400,300,40);
+        container.add(attendence_textfield);
         
       
         
         
         
-        back=new JButton("Back");
-        back.setBounds(180,570,150,50);
-        back.setFont(f);
-        back.setBackground(Color.BLACK);
-        back.setForeground(Color.WHITE);
-        c.add(back);
+        back_button=new JButton("Back");
+        back_button.setBounds(180,570,150,50);
+        back_button.setFont(font);
+        back_button.setBackground(Color.BLACK);
+        back_button.setForeground(Color.WHITE);
+        container.add(back_button);
         
-        home=new JButton("Home");
-        home.setBounds(650,570,150,50);
-        home.setFont(f);
-        home.setBackground(Color.BLACK);
-        home.setForeground(Color.WHITE);
-        c.add(home);
+        home_button=new JButton("Home");
+        home_button.setBounds(650,570,150,50);
+        home_button.setFont(font);
+        home_button.setBackground(Color.BLACK);
+        home_button.setForeground(Color.WHITE);
+        container.add(home_button);
         
         
          frame=new JFrame();
@@ -118,7 +118,7 @@ public class StudentMarks extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("Student Marks");
         frame.setVisible(true);
-        frame.add(c);
+        frame.add(container);
     }
     
    // public static void main(String[] args) {

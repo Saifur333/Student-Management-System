@@ -17,24 +17,24 @@ import javax.swing.JFrame;
 
 public class UpdateRoutines extends AddRoutine{
     
-    JButton update;
+    JButton update_button;
     JFrame frame;
     int row;
     
     UpdateRoutines() {
          add.setVisible(false);
-        update=new JButton("update");
-        update.setBounds(520,510,150,50);
-       update.setFont(f);
-        update.setBackground(Color.BLACK);
-        update.setForeground(Color.WHITE);
-        c.add(update);
+        update_button=new JButton("update_button");
+        update_button.setBounds(520,510,150,50);
+       update_button.setFont(font);
+        update_button.setBackground(Color.BLACK);
+        update_button.setForeground(Color.WHITE);
+        container.add(update_button);
         
-         update.addActionListener(new ActionListener(){
+         update_button.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 
-                if(e.getSource()==update){
+                if(e.getSource()==update_button){
          String sntf=daytf.getText();
          String mntf=firsttf.getText();
          String fntf=secondtf.getText();
@@ -44,9 +44,9 @@ public class UpdateRoutines extends AddRoutine{
          String btf=sixthtf.getText();
          
                     // frame.dispose();
-                    RoutineDemo ru;
+                    Routine_Demo ru;
                     try {
-                        ru = new RoutineDemo();
+                        ru = new Routine_Demo();
                         
                      ru.model.setValueAt(sntf, row, 0);
                     ru.model.setValueAt(mntf, row, 1);

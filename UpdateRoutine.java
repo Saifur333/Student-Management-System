@@ -10,19 +10,19 @@ import java.io.FileNotFoundException;
 import javax.swing.JButton;
 
 
-public class UpdateRoutine extends RoutineDemo{
+public class UpdateRoutine extends Routine_Demo{
     
-    public JButton update,back;
+    public JButton update,back_button;
     
     
     UpdateRoutine() throws FileNotFoundException{
         
-        back=new JButton("Back");
-        back.setBounds(700,570,150,50);
-        back.setFont(f);
-        back.setBackground(Color.BLACK);
-        back.setForeground(Color.WHITE);
-        c.add(back);
+        back_button=new JButton("Back");
+        back_button.setBounds(700,570,150,50);
+        back_button.setFont(font);
+        back_button.setBackground(Color.BLACK);
+        back_button.setForeground(Color.WHITE);
+        container.add(back_button);
         
          table.addMouseListener(new MouseAdapter(){
             
@@ -57,14 +57,14 @@ public class UpdateRoutine extends RoutineDemo{
             }
         });
          
-          back.addActionListener(new ActionListener(){
+          back_button.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e){
             
-            if(e.getSource()==back)
+            if(e.getSource()==back_button)
             {
                 frame.dispose();
-                AdminstratorDemo home=new AdminstratorDemo();  
+                AdminstratorDemo admin=new AdminstratorDemo();  
             }
             }
         

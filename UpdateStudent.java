@@ -17,34 +17,34 @@ import javax.swing.JOptionPane;
 
 public class UpdateStudent extends AddMember{
     
-    JButton update;
+    JButton update_button;
     int row;
     
     UpdateStudent(){
         
-        update=new JButton("Update");
-        update.setBounds(520,510,150,50);
-        update.setFont(f);
-        update.setBackground(Color.BLACK);
-        update.setForeground(Color.WHITE);
-        c.add(update);
+        update_button=new JButton("Update");
+        update_button.setBounds(520,510,150,50);
+        update_button.setFont(font);
+        update_button.setBackground(Color.BLACK);
+        update_button.setForeground(Color.WHITE);
+        container.add(update_button);
         
-        update.addActionListener(new ActionListener(){
+        update_button.addActionListener(new ActionListener(){
         
   
         @Override
         public void actionPerformed(ActionEvent e){
             
-         if(e.getSource()==update)
+         if(e.getSource()==update_button)
             {
                 
-            String sname =name.getText();
-            String sroll =roll.getText();
-            String  ssession = session.getText();
-            String  shometown = hometown.getText();
-            String  semail = eemail.getText();
-            String scontact = contact.getText();
-            String sblood = blood.getText();
+            String sname =name_textfield.getText();
+            String sroll =roll_textfield.getText();
+            String  ssession = session_textfield.getText();
+            String  shometown = hometown_textfield.getText();
+            String  semail = email_textfield.getText();
+            String scontact = contact_textfield.getText();
+            String sblood = blood_textfield.getText();
             
             if(sname.equals(""))
                     {

@@ -1,4 +1,4 @@
-
+package projectsms;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
@@ -11,12 +11,12 @@ import javax.swing.JTable;
 
 public class semester4 extends JFrame{
     
-     private Container c;
+     private Container container;
      private JLabel l1;
-     private Font f;
+     private Font font;
      private JTable table;
      private JScrollPane scroll;
-     private JButton b1,b2;
+     private JButton home_button,back_button;
      
      private String[] cols={"Course title","Course Code"};
      
@@ -44,42 +44,42 @@ public class semester4 extends JFrame{
     
     public void components()
     {
-         c= this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new Color(25,45,45));
+         container= this.getContentPane();
+       container.setLayout(null);
+        container.setBackground(new Color(25,45,45));
         
-        f = new Font("Candara",Font.BOLD,18);
+        font = new Font("Candara",Font.BOLD,18);
         
         l1 = new JLabel("Course Details");
         l1.setBounds(250,20,200,50);
         l1.setForeground(Color.WHITE);
-        l1.setFont(f);
-        c.add(l1);
+        l1.setFont(font);
+        container.add(l1);
         
         table = new JTable(rows,cols);
         table.setSelectionBackground(Color.YELLOW);
-        table.setFont(f);
+        table.setFont(font);
         
         scroll = new JScrollPane(table);
         scroll.setBounds(50, 80, 700, 180);
-        c.add(scroll);
+        container.add(scroll);
         
-        b1 = new JButton("Home");
-        b1.setBounds(50, 400, 100, 50);
-        b1.setBackground(new Color(25,45,45));
-        b1.setForeground(Color.WHITE);
-        b1.setBorderPainted(false);
-        b1.setFont(f);
+        home_button = new JButton("Home");
+        home_button.setBounds(50, 400, 100, 50);
+        home_button.setBackground(new Color(25,45,45));
+        home_button.setForeground(Color.WHITE);
+        home_button.setBorderPainted(false);
+        home_button.setFont(font);
        
-        c.add(b1);
+        container.add(home_button);
         
-        b2 = new JButton("Back");
-        b2.setBounds(200, 400, 100, 50);
-        b2.setBackground(new Color(25,45,45));
-        b2.setForeground(Color.WHITE);
-        b2.setFont(f);
-        b2.setBorderPainted(false);
-        c.add(b2);
+        back_button = new JButton("Back");
+        back_button.setBounds(200, 400, 100, 50);
+        back_button.setBackground(new Color(25,45,45));
+        back_button.setForeground(Color.WHITE);
+        back_button.setFont(font);
+        back_button.setBorderPainted(false);
+        container.add(back_button);
         
       setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setExtendedState(MAXIMIZED_BOTH);

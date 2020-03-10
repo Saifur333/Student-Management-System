@@ -16,87 +16,87 @@ import javax.swing.JTextField;
 
 public class AddMemberFaculty extends JFrame{
     
-     Container c;
-     JLabel namelbl,rolllbl,sessionlbl,hometownlbl,emaillbl,contactlbl,bloodlbl;
-     JTextField name,hometown,email,contact,blood;
-      JButton add,back,home;
-     final Font f;
-     JFrame frame;
+    public Container container;
+    public JLabel name_label,roll_label,session_label,hometown_label,email_label,contact_label,bloodlabel;
+    public JTextField name_textfield,hometown_textfield,email_textfield,contact_textfield,blood_textfield;
+     public JButton add_button,back_button,home_button;
+     public Font font;
+    public JFrame frame;
     
   
     AddMemberFaculty(){
-        c=this.getContentPane();
-        c.setLayout(null);
-        c.setBackground(new java.awt.Color(0, 230, 230));
+        container=this.getContentPane();
+        container.setLayout(null);
+        container.setBackground(new java.awt.Color(0, 230, 230));
         
-        f=new Font("Arial",Font.BOLD,24);
-        
-        
-        namelbl=new JLabel("Name                 :");      
-        namelbl.setFont(f);
-        namelbl.setBounds(180,100,200,50);
-        c.add(namelbl);
-        
-        name=new JTextField();      
-        name.setFont(f);
-        name.setBounds(400,100,300,40);
-        c.add(name);
-        
-        hometownlbl=new JLabel("Home town        :");      
-        hometownlbl.setFont(f); 
-        hometownlbl.setBounds(180,160,200,50);
-        c.add(hometownlbl);
-        
-        hometown=new JTextField();      
-        hometown.setFont(f);
-        hometown.setBounds(400,160,300,40);
-        c.add(hometown);
-        
-       emaillbl=new JLabel("Email                 :");      
-      emaillbl.setFont(f); 
-      emaillbl.setBounds(180,220,200,50);
-      c.add(emaillbl);
-        
-        email=new JTextField();      
-        email.setFont(f);
-        email.setBounds(400,220,300,40);
-        c.add(email);
-        
-        contactlbl=new JLabel("Contact             :");      
-        contactlbl.setFont(f);
-        contactlbl.setBounds(180,280,200,50);
-        c.add(contactlbl);
-        
-        contact=new JTextField();      
-        contact.setFont(f);
-        contact.setBounds(400,280,300,40);
-        c.add(contact);
-        
-        bloodlbl=new JLabel("Blood Group    :");      
-        bloodlbl.setFont(f);
-        bloodlbl.setBounds(180,340,200,50);
-        c.add(bloodlbl);
-        
-        blood=new JTextField();      
-        blood.setFont(f);
-        blood.setBounds(400,340,300,40);
-        c.add(blood);
+        font=new Font("Arial",Font.BOLD,24);
         
         
+        name_label=new JLabel("Name                 :");      
+        name_label.setFont(font);
+        name_label.setBounds(180,100,200,50);
+        container.add(name_label);
         
-        back=new JButton("Back");
-        back.setBounds(180,570,150,50);
-        back.setFont(f);
-        back.setBackground(Color.BLACK);
-        back.setForeground(Color.WHITE);
-        c.add(back);
+        name_textfield=new JTextField();      
+        name_textfield.setFont(font);
+        name_textfield.setBounds(400,100,300,40);
+        container.add(name_textfield);
         
-        home=new JButton("Home");
-        home.setBounds(520,570,150,50);
-        home.setFont(f);
-        home.setBackground(Color.BLACK);
-        home.setForeground(Color.WHITE);
-        c.add(home);
+        hometown_label=new JLabel("Home town        :");      
+        hometown_label.setFont(font); 
+        hometown_label.setBounds(180,160,200,50);
+        container.add(hometown_label);
+        
+        hometown_textfield=new JTextField();      
+        hometown_textfield.setFont(font);
+        hometown_textfield.setBounds(400,160,300,40);
+        container.add(hometown_textfield);
+        
+       email_label=new JLabel("Email                 :");      
+      email_label.setFont(font); 
+      email_label.setBounds(180,220,200,50);
+      container.add(email_label);
+        
+        email_textfield=new JTextField();      
+        email_textfield.setFont(font);
+        email_textfield.setBounds(400,220,300,40);
+        container.add(email_textfield);
+        
+        contact_label=new JLabel("Contact             :");      
+        contact_label.setFont(font);
+        contact_label.setBounds(180,280,200,50);
+        container.add(contact_label);
+        
+        contact_textfield=new JTextField();      
+        contact_textfield.setFont(font);
+        contact_textfield.setBounds(400,280,300,40);
+        container.add(contact_textfield);
+        
+        bloodlabel=new JLabel("Blood Group    :");      
+        bloodlabel.setFont(font);
+        bloodlabel.setBounds(180,340,200,50);
+        container.add(bloodlabel);
+        
+        blood_textfield=new JTextField();      
+        blood_textfield.setFont(font);
+        blood_textfield.setBounds(400,340,300,40);
+        container.add(blood_textfield);
+        
+        
+        
+        back_button=new JButton("Back");
+        back_button.setBounds(180,570,150,50);
+        back_button.setFont(font);
+        back_button.setBackground(Color.BLACK);
+        back_button.setForeground(Color.WHITE);
+        container.add(back_button);
+        
+        home_button=new JButton("Home");
+        home_button.setBounds(520,570,150,50);
+        home_button.setFont(font);
+        home_button.setBackground(Color.BLACK);
+        home_button.setForeground(Color.WHITE);
+        container.add(home_button);
         
         
          frame=new JFrame();
@@ -106,7 +106,7 @@ public class AddMemberFaculty extends JFrame{
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setTitle("Add faculty member");
         frame.setVisible(true);
-        frame.add(c);
+        frame.add(container);
        
        
          
