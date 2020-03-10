@@ -24,7 +24,7 @@ public class AddPresent extends JFrame{
      final Font font;
      JFrame frame;
      private static DecimalFormat df2 = new DecimalFormat("#.##");
-     
+     String sname,sroll,sheld,spresent, parcent2;
      String filename;
     
   
@@ -116,16 +116,53 @@ public class AddPresent extends JFrame{
             
             if(e.getSource()==add_button)
             {
-                String sname =name_textfield.getText();
-                String sroll = roll_textfield.getText();
-                String sheld = held_textfield.getText();
-                String spresent = present_textfield.getText();
-                
-                
-                
-                
-                
-                if(sname.equals("")){
+                 sname =name_textfield.getText();
+                 sroll = roll_textfield.getText();
+                 sheld = held_textfield.getText();
+                spresent = present_textfield.getText();  
+                checkinput();
+            }
+            
+            }
+   
+        });
+        
+         home_button.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+               if(ae.getSource()==home_button)
+               {
+                  frame.dispose();
+                  Home menuFile = new Home();
+                 
+                  
+               }
+            }
+            
+        });
+             
+    }
+    
+     
+    
+    /////////////////////////////// Long method refactoring///////////////////////////////////////////////////////
+     //////////////////           Extract method////////////////////////
+     public String calculate()
+     {
+        double intheld =Double.parseDouble(sheld);
+                     double intpresent =Double.parseDouble(spresent);
+                     double percent = (intpresent/intheld)*100;
+                     String percent1 = df2.format(percent);
+                     
+                      parcent2 =new Double(percent1).toString(); 
+                      
+         return parcent2;
+     }
+   ////////////////////////// Extract method///////////////////////////////// 
+    public void checkinput()
+       {
+            
+               if(sname.equals("")){
                     JOptionPane.showMessageDialog(null,"Please Insert name");
                 }
                 else if(sroll.equals("")){
@@ -136,30 +173,17 @@ public class AddPresent extends JFrame{
                 }
                 
                 else{
-                     double intheld =Double.parseDouble(sheld);
-                     double intpresent =Double.parseDouble(spresent);
-                     double percent = (intpresent/intheld)*100;
-                     String percent1 = df2.format(percent);
                      
-                     String parcent2 =new Double(percent1).toString();
                      filewriter(sname,sroll,sheld,spresent,parcent2);
                      JOptionPane.showMessageDialog(null, "Added Successfully");
                      name_textfield.setText("");
                      roll_textfield.setText("");
                      held_textfield.setText("");
                      present_textfield.setText("");
-                
-                   
                     
-                    
-                    
-                } 
-                
-                
-            }
-            
-            }
-        private void filewriter(String sname, String sroll, String sheld, String spresent, String spercent) {
+                }  
+       }
+    private void filewriter(String sname, String sroll, String sheld, String spresent, String spercent) {
                 try{
                     FileWriter wr = new FileWriter(filename,true);
                     wr.write(sname+" "+"#");
@@ -167,11 +191,7 @@ public class AddPresent extends JFrame{
                     wr.write(sheld+" "+"#");
                     wr.write(spresent+" "+"#");
                     wr.write(spercent+" "+"#");
-                    
-                    
-                    
-                    
-                       
+           
                     wr.write(System.getProperty("line.separator"));
                     wr.close();
                 }
@@ -180,23 +200,6 @@ public class AddPresent extends JFrame{
                     System.out.println(ae);
                 }
             }
-        
-        });
-        
-         home_button.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-               if(ae.getSource()==home_button)
-               {
-                  frame.dispose();
-                  Home menuFile = new Home();
-                  
-               }
-            }
-            
-        });
-    }
-    
     public static void main(String[] args) {
         
         AddPresent a =  new AddPresent();

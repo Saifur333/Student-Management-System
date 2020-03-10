@@ -11,8 +11,8 @@ import javax.swing.JOptionPane;
 
 public class AddStudentMember extends AddMember{
     
-            JButton add;
-    
+    JButton add;
+    String sname,sroll,ssession,shometown,semail,scontact,sblood;
             
             
     AddStudentMember(){
@@ -29,17 +29,59 @@ public class AddStudentMember extends AddMember{
         public void actionPerformed(ActionEvent e){
             
             if(e.getSource()==add)
-            {
-                
-            String sname =name_textfield.getText();
-            String sroll =roll_textfield.getText();
-            String  ssession = session_textfield.getText();
-            String  shometown = hometown_textfield.getText();
-            String  semail = email_textfield.getText();
-            String scontact = contact_textfield.getText();
-            String sblood = blood_textfield.getText();
+            {  
+             sname =name_textfield.getText();
+             sroll =roll_textfield.getText();
+              ssession = session_textfield.getText();
+              shometown = hometown_textfield.getText();
+              semail = email_textfield.getText();
+             scontact = contact_textfield.getText();
+             sblood = blood_textfield.getText(); 
+             checktextfield();
+            }
+        }
             
-            if(sname.equals(""))
+        });
+      
+        home_button.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            
+  
+                frame.dispose();
+                Home admin =new Home();
+        }
+        
+        });
+        
+        back_button.addActionListener(new ActionListener(){
+        @Override
+        public void actionPerformed(ActionEvent e){
+            
+  
+               if(e.getSource()==back_button){
+                 
+                    frame.dispose();
+                    AdminstratorDemo admin = new AdminstratorDemo(); 
+                }
+        }  
+        });
+    }
+    ///////////////////// Extract method /////////////////////
+    public void emptytf()
+    {
+                   name_textfield.setText("");
+                   roll_textfield.setText("");
+                   session_textfield.setText("");
+                   hometown_textfield.setText("");
+                   email_textfield.setText("");
+                   contact_textfield.setText("");
+                   blood_textfield.setText("");
+    }
+    ///////////////////// Extract method /////////////////////
+    public void checktextfield()
+    {
+        if(sname.equals(""))
                     {
                         JOptionPane.showMessageDialog(null,"Please Enter name");
                     }
@@ -66,21 +108,13 @@ public class AddStudentMember extends AddMember{
                     
                    filewriter(sname,sroll,ssession,shometown,semail,scontact,sblood);
                    JOptionPane.showMessageDialog(null,"Added Succesfully");
-                   name_textfield.setText("");
-                   roll_textfield.setText("");
-                   session_textfield.setText("");
-                   hometown_textfield.setText("");
-                   email_textfield.setText("");
-                   contact_textfield.setText("");
-                   blood_textfield.setText("");
+                   emptytf();
                     
                 }
                 
-               
-                
-            }
-        }
-            private void filewriter(String sname, String sroll, String ssession, String shometown, String semail, String scontact, String sblood) {
+    }
+    ///////////////////////// Extract method //////////////////////
+    private void filewriter(String sname, String sroll, String ssession, String shometown, String semail, String scontact, String sblood) {
                 try{
                     FileWriter wr = new FileWriter("student.txt",true);
                     wr.write(sname+" "+"#");
@@ -98,43 +132,5 @@ public class AddStudentMember extends AddMember{
                     System.out.println(ae);
                 }
             }
-            
-           
-        
-        });
-      
-        home_button.addActionListener(new ActionListener(){
-        
-  
-        @Override
-        public void actionPerformed(ActionEvent e){
-            
-  
-                frame.dispose();
-                Home admin =new Home();
-        }
-        
-        });
-        
-        back_button.addActionListener(new ActionListener(){
-        
-  
-        @Override
-        public void actionPerformed(ActionEvent e){
-            
-  
-               if(e.getSource()==back_button){
-                 
-                    frame.dispose();
-                    AdminstratorDemo admin = new AdminstratorDemo();
-                    
-                }
-        }
-   
-        
-        });
-    }
-    
-    
     
 }

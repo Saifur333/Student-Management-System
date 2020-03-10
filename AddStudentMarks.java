@@ -18,6 +18,8 @@ public class AddStudentMarks extends  StudentMarks{
       JLabel filenamelbl;
       String filename;
     Object back;
+    String sname,sroll,sct1,sct2,sassign,sattendence,sum1,sfilename;
+    double intct1,intct2,intassign,intattend ;
     
     AddStudentMarks(){
         
@@ -44,19 +46,47 @@ public class AddStudentMarks extends  StudentMarks{
             
             if(e.getSource()==add_button)
             {
-                String sname =name_textfield.getText();
-                String sroll = roll_textfield.getText();
-                String sct1 = ct1_textfield.getText();
-                String sct2 = ct2_textfield.getText();
-                String sassign =assignment_textfield.getText();
-                String sattendence = attendence_textfield.getText();
+                 sname =name_textfield.getText();
+                 sroll = roll_textfield.getText();
+                sct1 = ct1_textfield.getText();
+                 sct2 = ct2_textfield.getText();
+                 sassign =assignment_textfield.getText();
+                 sattendence = attendence_textfield.getText();
                 filename_textfield.setText(filename);
-                String sfilename = filename_textfield.getText();
+                 sfilename = filename_textfield.getText();
                 
-                
-                
-                
-                if(sname.equals("")){
+                checktextfield();
+            }
+            
+            }
+        
+        
+        });   
+    }
+    
+    ///////////////////////////// Long method //////////////////////////////////////////////
+    ////////////////////   Extract method ////////////////////////////////////////
+    public void emptytextfield()
+    {
+                           name_textfield.setText("");
+                          roll_textfield.setText("");
+                         ct1_textfield.setText("");
+                          ct2_textfield.setText("");
+                         assignment_textfield.setText("");
+                         attendence_textfield.setText("");
+    }
+     ////////////////////   Extract method ////////////////////////////////////////
+    public void calculation()
+    {
+                  intct1 =Double.parseDouble(sct1);
+                  intct2 =Double.parseDouble(sct2);
+                  intassign =Double.parseDouble(sassign);
+                  intattend =Double.parseDouble(sattendence); 
+    }
+     ////////////////////   Extract method ////////////////////////////////////////
+    public void checktextfield()
+    {
+        if(sname.equals("")){
                     JOptionPane.showMessageDialog(null,"Please Insert name");
                 }
                 else if(sroll.equals("")){
@@ -78,10 +108,7 @@ public class AddStudentMarks extends  StudentMarks{
                     JOptionPane.showMessageDialog(null,"You Modify the Filenme");
                 }
                 else{
-                     double intct1 =Double.parseDouble(sct1);
-                double intct2 =Double.parseDouble(sct2);
-                double intassign =Double.parseDouble(sassign);
-               double intattend =Double.parseDouble(sattendence);
+                  calculation();
                 if(intct1>=intassign && intct2>=intassign){
                                  
                       double sum = (intct1+intct2)/2+intattend;
@@ -89,24 +116,17 @@ public class AddStudentMarks extends  StudentMarks{
                          String sum1=new Double(sum).toString();
                          filewriter(sname,sroll,sct1,sct2,sassign,sattendence,sum1);
                          JOptionPane.showMessageDialog(null, "Insert Successfully");
-                           name_textfield.setText("");
-                          roll_textfield.setText("");
-                         ct1_textfield.setText("");
-                          ct2_textfield.setText("");
-                         assignment_textfield.setText("");
-                         attendence_textfield.setText("");
+                          ////////////////////// calling method
+                          emptytextfield();
+                          
                             }
                              else if(intct1>=intct2 && intct2<=intassign){
                                  double sum = (intct1+intassign)/2+intattend;
                                   String sum1=new Double(sum).toString(); 
                                   filewriter(sname,sroll,sct1,sct2,sassign,sattendence,sum1);
                                   JOptionPane.showMessageDialog(null, "Insert Successfully");
-                                 name_textfield.setText("");
-                                 roll_textfield.setText("");
-                                 ct1_textfield.setText("");
-                                  ct2_textfield.setText("");
-                                 assignment_textfield.setText("");
-                                 attendence_textfield.setText("");
+                               ///////////// calling method
+                                  emptytextfield();
                              }
                              else if(intct1<=intct2 && intct1<=intassign){
                                  
@@ -114,26 +134,13 @@ public class AddStudentMarks extends  StudentMarks{
                                   String sum1=new Double(sum).toString(); 
                                   filewriter(sname,sroll,sct1,sct2,sassign,sattendence,sum1);
                                  JOptionPane.showMessageDialog(null, "Insert Successfully");
-                                 name_textfield.setText("");
-                                 roll_textfield.setText("");
-                                 ct1_textfield.setText("");
-                                 ct2_textfield.setText("");
-                                 assignment_textfield.setText("");
-                                 attendence_textfield.setText("");
-                              
-                                 
-                                 
-                             }
-                   
-                    
-                    
-                    
-                } 
-                
-                
-            }
-            
-            }
+                                 ///////calling method
+                                 emptytextfield();
+                             }  
+                }
+    }
+    ////////////////////////////////////   Extract method /////////////////////////////
+         
         private void filewriter(String sname, String sroll, String sct1, String sct2, String sassign, String sattendence,String sum1) {
                 try{
                     FileWriter wr = new FileWriter(filename,true);
@@ -144,10 +151,7 @@ public class AddStudentMarks extends  StudentMarks{
                     wr.write(sassign+" "+"#");
                     wr.write(sattendence+" "+"#");
                     wr.write(sum1+" "+"#");
-                    
-                    
-                    
-                       
+           
                     wr.write(System.getProperty("line.separator"));
                     wr.close();
                 }
@@ -156,15 +160,6 @@ public class AddStudentMarks extends  StudentMarks{
                     System.out.println(ae);
                 }
             }
-        
-        });
-        
-        
-
-        
-        
-    }
-    
    // public static void main(String[] args) {
        // AddStudentMarks addStudentMarks = new AddStudentMarks();
    // }

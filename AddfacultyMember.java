@@ -20,7 +20,7 @@ public class AddfacultyMember extends AddMemberFaculty{
     Font font;
     Container container;
     public JTextField name_textfield,hometown_textfield,email_textfield,contact_textfield,blood_textfield;
-    
+    String tname,thometown,temail,tcontact,tblood;
     
     AddfacultyMember()
     {
@@ -35,63 +35,13 @@ public class AddfacultyMember extends AddMemberFaculty{
         add_button.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e){
-            String tname= name_textfield.getText();
-            String thometown = hometown_textfield.getText();
-            String temail = email_textfield.getText();
-            String tcontact = contact_textfield.getText();
-            String tblood = blood_textfield.getText();
-            
-                           
-                    if(tname.equals(""))
-                    {
-                        JOptionPane.showMessageDialog(null,"Please Enter name");
-                    }
-                    else if(thometown.equals("")){
-                            JOptionPane.showMessageDialog(null, "Please Enter hometown");
-                        }
-                   else if(temail.equals("")){
-                                JOptionPane.showMessageDialog(null, "Please Enter Email");
-                            }
-                    else if(tcontact.equals("")){
-                                    JOptionPane.showMessageDialog(null,"Please Enter contact");
-                                }
-                    else if(tblood.equals("")){
-                                        JOptionPane.showMessageDialog(null,"Please Enter Blood");
-                                    }
-                
-                else{
-                    
-                    filewriter(tname,thometown,temail,tcontact,tblood);
-                   JOptionPane.showMessageDialog(null,"Added Succesfully");
-                   name_textfield.setText("");
-                   hometown_textfield.setText("");
-                   email_textfield.setText("");
-                   contact_textfield.setText("");
-                   blood_textfield.setText("");
-                    
-                }
-                
-            
-  
+             tname= name_textfield.getText();
+            thometown = hometown_textfield.getText();
+             temail = email_textfield.getText();
+             tcontact = contact_textfield.getText();
+             tblood = blood_textfield.getText();
+            checktf();
         }
-            private void filewriter(String tname, String thometown,String temail, String tcontact, String tblood) {
-                
-                try{
-                    FileWriter wr = new FileWriter("teachersInformation.txt",true);
-                    wr.write(tname+" "+"#");
-                    wr.write(thometown+" "+"#");
-                    wr.write(temail+" "+"#");
-                    wr.write(tcontact+" "+"#");
-                    wr.write(tblood+" "+"#");
-                    wr.write(System.getProperty("line.separator"));
-                    wr.close();
-                }
-                catch(Exception ae)
-                {
-                    System.out.println(ae);
-                }
-            }
-        
         });
         home_button.addActionListener(new ActionListener(){
         
@@ -122,10 +72,59 @@ public class AddfacultyMember extends AddMemberFaculty{
    
         
         });
-    
-        
-        
     }
+    ///////////////////  Extract method ///////////////////////////
+    public void emptytf()
+    {
+        name_textfield.setText("");
+                   hometown_textfield.setText("");
+                   email_textfield.setText("");
+                   contact_textfield.setText("");
+                   blood_textfield.setText("");
+    }
+    public void checktf()
+    {
+         if(tname.equals(""))
+                    {
+                        JOptionPane.showMessageDialog(null,"Please Enter name");
+                    }
+                    else if(thometown.equals("")){
+                            JOptionPane.showMessageDialog(null, "Please Enter hometown");
+                        }
+                   else if(temail.equals("")){
+                                JOptionPane.showMessageDialog(null, "Please Enter Email");
+                            }
+                    else if(tcontact.equals("")){
+                                    JOptionPane.showMessageDialog(null,"Please Enter contact");
+                                }
+                    else if(tblood.equals("")){
+                                        JOptionPane.showMessageDialog(null,"Please Enter Blood");
+                                    }
+                
+                else{
+                    
+                    filewriter(tname,thometown,temail,tcontact,tblood);
+                   JOptionPane.showMessageDialog(null,"Added Succesfully");
+                   emptytf();   
+                }
+    }
+    private void filewriter(String tname, String thometown,String temail, String tcontact, String tblood) {
+                
+                try{
+                    FileWriter wr = new FileWriter("teachersInformation.txt",true);
+                    wr.write(tname+" "+"#");
+                    wr.write(thometown+" "+"#");
+                    wr.write(temail+" "+"#");
+                    wr.write(tcontact+" "+"#");
+                    wr.write(tblood+" "+"#");
+                    wr.write(System.getProperty("line.separator"));
+                    wr.close();
+                }
+                catch(Exception ae)
+                {
+                    System.out.println(ae);
+                }
+            }
     public static void main(String[] args) {
         AddfacultyMember m=new AddfacultyMember();
     }
